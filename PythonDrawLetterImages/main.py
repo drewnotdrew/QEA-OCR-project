@@ -1,13 +1,21 @@
 from PIL import Image, ImageFont, ImageDraw
 import sys
+import os
 
 W, H = (32, 32)
 
 # draw_letter_img draws and saves an image
 def draw_letter_img(msg):
   img = Image.new(mode="RGB", size=(W, H), color=(255, 255, 255))
+
+  # Set directory
+#  os.chdir("\PythonDrawLetterImages\Fonts")
+#  print("Change dir")
+
+  font = "Fonts/AGENCYB.ttf"
+
   # import font
-  im_font = ImageFont.truetype("AGENCYB.ttf", size=32)
+  im_font = ImageFont.truetype(font, size=32)
   
   # make created image editable
   im_draw = ImageDraw.Draw(img)
